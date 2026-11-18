@@ -1,0 +1,196 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #101c36, #243e65, #426b91);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.10);
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.etiqueta {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #a8d9ff;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+header h1 span {
+    color: #80caff;
+}
+
+header p {
+    color: #d1e4f5;
+    margin-bottom: 25px;
+}
+
+.marcador {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.jugador {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.jugador.activo {
+    border-color: #80caff;
+    background: rgba(128,202,255,0.15);
+}
+
+.simbolo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #80caff;
+}
+
+.jugador p {
+    font-size: 13px;
+    margin: 5px 0;
+    color: #d1e4f5;
+}
+
+.jugador h2 {
+    font-size: 25px;
+}
+
+.juego {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.juego h3 {
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: #dceeff;
+    min-height: 22px;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.celda {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 15px;
+    background: #eaf5ff;
+    color: #24466b;
+    font-size: 55px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.celda:hover {
+    background: #c9e8ff;
+    transform: scale(1.04);
+}
+
+.celda.x {
+    color: #287fc2;
+}
+
+.celda.o {
+    color: #e28baf;
+}
+
+.celda.ganadora {
+    background: #a8e6cf;
+    color: #174e3d;
+    animation: pulso 0.7s infinite alternate;
+}
+
+@keyframes pulso {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.07);
+    }
+}
+
+.btn-reiniciar,
+.btn-limpiar {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-reiniciar {
+    background: #80caff;
+    color: #142c49;
+}
+
+.btn-reiniciar:hover {
+    background: #b4e1ff;
+    transform: translateY(-2px);
+}
+
+.btn-limpiar {
+    background: transparent;
+    color: #dceeff;
+    border: 1px solid #80caff;
+}
+
+.btn-limpiar:hover {
+    background: rgba(128,202,255,0.15);
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #c1d7eb;
+}
+
+@media (max-width: 400px) {
+    .contenedor {
+        padding: 20px;
+    }
+
+    .celda {
+        font-size: 42px;
+    }
+}
